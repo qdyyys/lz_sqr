@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-image: url(../public/images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+img {
+  max-width: none;
+}
+@font-face {
+  font-family: "PFBeauSansProRegular";
+  src: url(../public/fonts/PFBeauSansPro-Regular.ttf);
+  src: url(../public/fonts/PFBeauSansPro-Regular.woff);
+}
+@font-face {
+  font-family: "PFBeauSansProBlack";
+  src: url(../public/fonts/PFBeauSansPro-Black.ttf);
+  src: url(../public/fonts/PFBeauSansPro-Black.woff);
+}
+@font-face {
+  font-family: "PFBeauSansProSemiBold";
+  src: url(../public/fonts/PFBeauSansPro-SemiBold.ttf);
+}
+@font-face {
+  font-family: "PFBeauSansProLight";
+  src: url(../public/fonts/PFBeauSansPro-Light.ttf);
+  src: url(../public/fonts/PFBeauSansPro-Light.woff);
+}
+@font-face {
+  font-family: "TekoMedium";
+  src: url(../public/fonts/Teko-Medium.ttf);
+  src: url(../public/fonts/Teko-Medium.woff);
+}
+@font-face {
+  font-family: "TekoSemiBold";
+  src: url(../public/fonts/Teko-SemiBold.ttf);
+  src: url(../public/fonts/Teko-SemiBold.woff);
+}
+@font-face {
+  font-family: "TekoBold";
+  src: url(../public/fonts/Teko-Bold.ttf);
+  src: url(../public/fonts/Teko-Bold.woff);
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: url(../public/fonts/RobotoBold.ttf);
+  src: url(../public/fonts/RobotoBold.woff);
+}
+.header {
+  background-image: url(../public/images/Flag_USA_header.png);
+  background-repeat: no-repeat;
+  background-position: calc(73vw);
+}
+.btn_abs {
+  position: absolute;
+  top: calc(100% - 35%);
+  left: 73%;
+  width: max-content;
+  cursor: pointer;
+
+  transition: 0.2s;
+  user-select: none;
+}
+.btn_abs:active {
+  transform: scale(0.95);
+}
+.main_elem::before {
+  position: absolute;
+  content: "Ценности клана";
+  color: white;
+  font-family: "PFBeauSansProRegular";
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 62px;
+  background-color: rgba(1, 13, 38, 1);
+  left: 0;
+  bottom: 105%;
+}
+
+.main_elem2::before {
+  position: absolute;
+  content: "Новости";
+  color: white;
+  font-family: "PFBeauSansProRegular";
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 62px;
+  background-color: rgba(1, 13, 38, 1);
+  left: 0;
+  bottom: 105%;
+}
+.main_elem3::before {
+  position: absolute;
+  content: "Новости";
+  color: white;
+  font-family: "PFBeauSansProRegular";
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 62px;
+  background-color: rgba(1, 13, 38, 1);
+  left: 0;
+  bottom: 105%;
+}
+.charters img {
+  filter: brightness(0.3);
+}
+.main2_ {
+  background-image: url(../public//images/Backgr_values.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.burger_menu {
+  transform: translateY(-300%);
+  transition: 0.4s ease;
+}
+.showBurger {
+  transform: translateY(0);
+}
+.chrt_pe {
+  background-image: url(../public/images/chart1.jpg);
+  height: 341px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 234px;
+}
+.chrt_pe:nth-child(2) {
+  background-image: url(../public/images/chart2.jpg);
+}
+.chrt_pe:nth-child(3) {
+  background-image: url(../public/images/chart3.jpg);
+}
+.chrt_pe:nth-child(4) {
+  background-image: url(../public/images/chart4.jpg);
+}
+.chrt_pe:nth-child(5) {
+  background-image: url(../public/images/chart5.jpg);
+}
+@media (max-width: 1350px) {
+  .main_ {
+    flex-direction: column;
+  }
+  .main2_ {
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    overflow: hidden;
+    width: 764px;
+  }
+  .main2_ img {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+
+    width: auto;
+    right: 60%;
+  }
+  .sect2_bg {
+    width: 50%;
+    gap: 50px;
+    padding: 30px 0;
+  }
+  .sect2_bg div {
+    right: 0;
+  }
+  .sect2_bg div:nth-of-type(2) {
+    right: 80px;
+  }
+  .sect2_bg div:nth-of-type(3) {
+    right: 180px;
+  }
+  .main_elem2 {
+    width: 764px;
+    flex-direction: column;
+  }
+  .main_elem2 img {
+    width: 100%;
+  }
+  .main_elem3 {
+    width: 764px;
+  }
+  .main_elem3 div:not(.chrt_pe, .chrt_is) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .main_3 div div:nth-of-type(2):not(.sub_btn) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .main_3 div div:nth-of-type(2) div:nth-last-of-type(3) {
+    display: flex;
+    flex-direction: column;
+  }
+  .header nav {
+    display: none;
+  }
+  .header {
+    justify-content: space-between;
+    padding: 0px 30px;
+    margin-top: 0;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+  .logo {
+    width: 200px;
+    top: 10px;
+    position: relative;
+  }
+  .main_ img {
+    position: relative;
+    right: 20%;
+    width: 120%;
+  }
+}
+
+@media (max-width: 1230px) {
+  .header {
+    background-image: none;
+  }
+  .btn_abs {
+    display: none;
+  }
+}
+@media (max-width: 550px) {
+  .logo {
+    width: 160px;
+  }
+}
+@media (max-width: 810px) {
+  .main_ {
+    width: 90%;
+  }
+  .main2_ {
+    width: 90%;
+  }
+  .main_elem2 {
+    width: 90%;
+  }
+  .main_elem3 {
+    width: 90%;
+  }
+  .main_elem3 div {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sub_btn {
+    display: block;
+  }
+  .cont_a {
+    padding: 0;
+  }
+  .charters {
+    grid-template-columns: 1fr 1fr !important;
+    justify-items: center;
+    width: 100%;
+  }
+  .main_3 div div:nth-of-type(2):not(.sub_btn) {
+    grid-template-columns: 1fr;
+  }
+  .inf_sub {
+    flex-direction: column;
+    text-align: center;
+  }
+  .inf_sub div:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 590px) {
+  .charters {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .subs_inf {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .main2_ div div {
+    width: 100%;
+  }
+  .main2_ div div:nth-child(2) {
+    right: 60px;
+    width: 120%;
+  }
+  .main2_ div div:nth-child(3) {
+    right: 100px;
+  }
+  .main_ div div:nth-child(3) ul {
+    flex-direction: column;
+  }
+  .main_ div div:nth-child(2) {
+    flex-direction: column;
+    align-items: start;
+  }
+}
