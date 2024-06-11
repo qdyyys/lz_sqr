@@ -1,3 +1,4 @@
+import { useState } from "react";
 import mainBg from "../../public/images/poster1.png";
 import sect2Bg from "../../public/images/poster2.png";
 import sect3bg from "../../public/images/poster3.jpg";
@@ -7,6 +8,16 @@ import vid3 from "../../public/images/vid3.png";
 import vid4 from "../../public/images/vid4.png";
 
 const Main = () => {
+  const [infCharts, setInfCharts] = useState(Array(5).fill(false));
+
+  function handleChartMore(index: number) {
+    setInfCharts((prevInfCharts) => {
+      const newInfCharts = [...prevInfCharts];
+      newInfCharts[index] = !newInfCharts[index];
+      return newInfCharts;
+    });
+  }
+
   return (
     <>
       <div className="max-w-screen-xl cont_a px-16 mx-auto flex flex-col items-center">
@@ -19,7 +30,7 @@ const Main = () => {
             <div className="flex font-PFBeauSansProSemiBold items-center gap-3 mb-3">
               <h2 className="text-7xl">Клан</h2>
               <p className="text-xl">
-                С непривзайденной <br /> историей
+                С непревзойденной <br /> историей
               </p>
             </div>
 
@@ -30,15 +41,15 @@ const Main = () => {
               <ul className="font-TekoBold text-3xl flex gap-11">
                 <li>
                   <h3>115</h3>
-                  <p>Человек</p>
+                  <p className="font-PFBeauSansProSemiBold">Человек</p>
                 </li>
                 <li>
                   <h3>150</h3>
-                  <p>Лидерок</p>
+                  <p className="font-PFBeauSansProSemiBold">Лидерок</p>
                 </li>
                 <li>
                   <h3>52</h3>
-                  <p>Миссии</p>
+                  <p className="font-PFBeauSansProSemiBold">Миссии</p>
                 </li>
               </ul>
             </div>
@@ -114,130 +125,45 @@ const Main = () => {
         </div>
 
         <div className="main main_elem3 relative text-darkBlue flex mb-48 text-white">
-          <div className="flex charters gap-5">
-            <div className="chrt_pe flex flex-col justify-center pl-7">
-              <div className="text-base chrt_is">
-                <p>В клане с 2013 года</p>
-                <p className="mt-5">Обязанности:</p>
+          <div className="flex charters gap-5 chrts">
+            {[...Array(5)].map((_, index) => (
+              <div
+                className="chrt_pe h-full flex flex-col relative overflow-hidden"
+                key={index}
+              >
+                <div
+                  className={`w-full bg-slate-800/10 backdrop-blur-3xl py-4 px-4 ite flex flex-col-reverse justify-between transition-transform duration-300 h-full ${
+                    infCharts[index] ? "translate-y-0" : "translate-y-64 "
+                  }`}
+                >
+                  <div className="font-PFBeauSansProLight">
+                    <h3 className="mb-3">Обязанности:</h3>
+                    <ul>
+                      <li>Обязанность 1...</li>
+                      <li>Обязанность 2..</li>
+                      <li>Обязанность 3...</li>
+                      <li>Обязанность 4.....</li>
+                      <li>Обязанность 5...</li>
+                    </ul>
+                  </div>
+                  <div className="flex items-center justify-between w-full">
+                    <h2 className="font-TekoSemiBold">
+                      Washington <br /> Yaroslav
+                    </h2>
+                    <p
+                      className="cursor-pointer hover:text-customRed transition select-none"
+                      onClick={() => handleChartMore(index)}
+                    >
+                      ...MORE
+                    </p>
+                  </div>
+                </div>
               </div>
-
-              <ul className="text-base font-PFBeauSansProLight">
-                <li>Обязанность</li>
-                <li>Обязанность.</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-              </ul>
-
-              <div className="flex items-end gap-10 mt-4">
-                <p className="font-TekoMedium text-2xl">
-                  Washington <br /> Yaroslav
-                </p>
-                <span className="font-PFBeauSansProLight cursor-pointer more_chrt">
-                  ...MORE
-                </span>
-              </div>
-            </div>
-
-            <div className="chrt_pe flex flex-col justify-center pl-7">
-              <div className="text-base chrt_is">
-                <p>В клане с 2013 года</p>
-                <p className="mt-5">Обязанности:</p>
-              </div>
-
-              <ul className="text-base font-PFBeauSansProLight">
-                <li>Обязанность</li>
-                <li>Обязанность.</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-              </ul>
-
-              <div className="flex items-end gap-10 mt-4">
-                <p className="font-TekoMedium text-2xl">
-                  Washington <br /> Yaroslav
-                </p>
-                <span className="font-PFBeauSansProLight cursor-pointer more_chrt">
-                  ...MORE
-                </span>
-              </div>
-            </div>
-
-            <div className="chrt_pe flex flex-col justify-center pl-7">
-              <div className="text-base chrt_is">
-                <p>В клане с 2013 года</p>
-                <p className="mt-5">Обязанности:</p>
-              </div>
-
-              <ul className="text-base font-PFBeauSansProLight">
-                <li>Обязанность</li>
-                <li>Обязанность.</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-              </ul>
-
-              <div className="flex items-end gap-10 mt-4">
-                <p className="font-TekoMedium text-2xl">
-                  Washington <br /> Yaroslav
-                </p>
-                <span className="font-PFBeauSansProLight cursor-pointer more_chrt">
-                  ...MORE
-                </span>
-              </div>
-            </div>
-
-            <div className="chrt_pe flex flex-col justify-center pl-7">
-              <div className="text-base chrt_is">
-                <p>В клане с 2013 года</p>
-                <p className="mt-5">Обязанности:</p>
-              </div>
-
-              <ul className="text-base font-PFBeauSansProLight">
-                <li>Обязанность</li>
-                <li>Обязанность.</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-              </ul>
-
-              <div className="flex items-end gap-10 mt-4">
-                <p className="font-TekoMedium text-2xl">
-                  Washington <br /> Yaroslav
-                </p>
-                <span className="font-PFBeauSansProLight cursor-pointer more_chrt">
-                  ...MORE
-                </span>
-              </div>
-            </div>
-
-            <div className="chrt_pe flex flex-col justify-center pl-7">
-              <div className="text-base chrt_is">
-                <p>В клане с 2013 года</p>
-                <p className="mt-5">Обязанности:</p>
-              </div>
-
-              <ul className="text-base font-PFBeauSansProLight">
-                <li>Обязанность</li>
-                <li>Обязанность.</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-                <li>Обязанность</li>
-              </ul>
-
-              <div className="flex items-end gap-10 mt-4">
-                <p className="font-TekoMedium text-2xl">
-                  Washington <br /> Yaroslav
-                </p>
-                <span className="font-PFBeauSansProLight cursor-pointer more_chrt">
-                  ...MORE
-                </span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        <div className="main main_elem2 main_3 relative bg-white text-darkBlue flex mb-48">
+        <div className="main main_elem2 main_3 relative bg-white text-darkBlue flex mb-48 w-full">
           <div className="w-full px-5 py-5">
             <div className="inf_sub flex justify-between w-full font-PFBeauSansProRegular items-center mb-7">
               <div className="flex flex-col">
@@ -253,36 +179,59 @@ const Main = () => {
                 Подписаться
               </div>
             </div>
-            <div className="flex gap-5 mb-16">
-              <div className="cursor-pointer">
-                <img src={vid1} alt="" className="mb-3" />
-                <p className="font-RobotoBold">
-                  ПРОФЕССИЯ ПОЖАРНИКА НА MAJESTIC RP: КАК ЭФФЕКТИВНО РАБОТАТЬ
-                  В...
-                </p>
-              </div>
+            <div className="mb-5">
+              <div className="vid_contw-full vid_cont">
+                <div className="relative overflow-hidden bg-black">
+                  <img src={vid1} alt="" className="w-full" />
+                  <div className="show_vid w-full absolute bottom-0 bg-slate-800/10 backdrop-blur-3xl py-4 px-4 text-white flex flex-col items-center justify-between h-full">
+                    <p>
+                      ПРОФЕССИЯ ПОЖАРНИКА НА MAJESTIC RP: КАК ЭФФЕКТИВНО
+                      РАБОТАТЬ В...
+                    </p>
+                    <div className="bg-darkBlue px-9 py-2 cursor-pointer">
+                      Смотреть
+                    </div>
+                  </div>
+                </div>
 
-              <div className="cursor-pointer">
-                <img src={vid2} alt="" className="mb-3" />
-                <p className="font-RobotoBold">
-                  ХЭЛЛОУИНСКИЙ УЖАС НА MAJESTIC RP: ПОЛНЫЙ ОБЗОР ОБНОВЛЕНИЯ ДЛЯ
-                  GTA...
-                </p>
-              </div>
+                <div className="relative overflow-hidden bg-black">
+                  <img src={vid2} alt="" className="w-full" />
+                  <div className="show_vid w-full absolute bottom-0 bg-slate-800/10 backdrop-blur-3xl py-4 px-4 text-white flex flex-col items-center justify-between h-full">
+                    <p>
+                      ХЭЛЛОУИНСКИЙ УЖАС НА MAJESTIC RP: ПОЛНЫЙ ОБЗОР ОБНОВЛЕНИЯ
+                      ДЛЯ GTA...
+                    </p>
+                    <div className="bg-darkBlue px-9 py-2 cursor-pointer">
+                      Смотреть
+                    </div>
+                  </div>
+                </div>
 
-              <div className="cursor-pointer">
-                <img src={vid3} alt="" className="mb-3" />
-                <p className="font-RobotoBold">
-                  Топовая арена на GTA 5 RP Majestic RP - Маджестик РП ГТА 5 РП
-                </p>
-              </div>
+                <div className="relative overflow-hidden bg-black">
+                  <img src={vid3} alt="" className="w-full" />
+                  <div className="show_vid w-full absolute bottom-0 bg-slate-800/10 backdrop-blur-3xl py-4 px-4 text-white flex flex-col items-center justify-between h-full">
+                    <p>
+                      Топовая арена на GTA 5 RP Majestic RP - Маджестик РП ГТА 5
+                      РП
+                    </p>
+                    <div className="bg-darkBlue px-9 py-2 cursor-pointer">
+                      Смотреть
+                    </div>
+                  </div>
+                </div>
 
-              <div className="cursor-pointer">
-                <img src={vid4} alt="" className="mb-3" />
-                <p className="font-RobotoBold">
-                  Работа фермером или как поднять бабла на GTA 5 RP Majestic RP
-                  - Маджестик РП...
-                </p>
+                <div className="relative overflow-hidden bg-black">
+                  <img src={vid4} alt="" className="w-full" />
+                  <div className="show_vid w-full absolute bottom-0 bg-slate-800/10 backdrop-blur-3xl py-4 px-4 text-white flex flex-col items-center justify-between h-full">
+                    <p>
+                      Топовая арена на GTA 5 RP Majestic RP - Маджестик РП ГТА 5
+                      РП
+                    </p>
+                    <div className="bg-darkBlue px-9 py-2 cursor-pointer">
+                      Смотреть
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -3,9 +3,8 @@
 @tailwind utilities;
 body {
   background-image: url(../public/images/bg.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
+  background-repeat: repeat-y;
+  background-size: contain;
 }
 img {
   max-width: none;
@@ -148,6 +147,20 @@ img {
 .chrt_pe:nth-child(5) {
   background-image: url(../public/images/chart5.jpg);
 }
+.vid_cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.show_vid:hover {
+  transform: translateY(0);
+}
+.show_vid {
+  transform: translateY(70%);
+}
+.show_vid {
+  transition: 0.3s;
+}
 @media (max-width: 1350px) {
   .main_ {
     flex-direction: column;
@@ -191,14 +204,6 @@ img {
   .main_elem3 {
     width: 764px;
   }
-  .main_elem3 div:not(.chrt_pe, .chrt_is) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .main_3 div div:nth-of-type(2):not(.sub_btn) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
   .main_3 div div:nth-of-type(2) div:nth-last-of-type(3) {
     display: flex;
     flex-direction: column;
@@ -224,6 +229,10 @@ img {
     position: relative;
     right: 20%;
     width: 120%;
+  }
+  .charters {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
@@ -255,6 +264,12 @@ img {
   }
   .main_elem3 div {
     grid-template-columns: 1fr 1fr;
+  }
+  .vid_cont {
+    grid-template-columns: 1fr;
+  }
+  .vid_cont div div {
+    font-size: 20px;
   }
   .sub_btn {
     display: block;
