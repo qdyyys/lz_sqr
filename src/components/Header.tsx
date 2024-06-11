@@ -58,7 +58,7 @@ const Header = () => {
         </nav>
 
         <div>
-          <ul className="flex items-center gap-4">
+          <ul className="flex items-center gap-4 relative left-12">
             <li className="cursor-pointer transition duration-100 active:scale-95">
               <img src={window.innerWidth < 1230 ? ytFt : ytIco} alt="" />
             </li>
